@@ -4,7 +4,7 @@ Run `mdx_server.py /home/johndoe/mdx-server/mdx/MyDictionary1.mdx /home/johndoe/
 
 the git branch `front` is a front-end wrappper, which offers a simple interface to search items through AJAX.
 
-**Warning**: To enable full feature of AJAX, it uses `Access-Control-Allow-Origin: *"`.
+**Warning**: To enable full feature of AJAX, it uses `Access-Control-Allow-Origin: *`.
 For security reason, pls change it by your self.  
 You may also need to consider using HTTPS or even HSTS if you want to enchance security.
 
