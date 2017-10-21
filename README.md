@@ -2,7 +2,7 @@ This version aims to be more suitable for running on a remote \*inx server.
 
 Run `mdx_server.py /home/johndoe/mdx-server/mdx/MyDictionary1.mdx /home/johndoe/mdx-server/mdx/MyDictionary2.mdx` for example.
 
-the git branch `front` is a front-end wrappper, which offers a simple interface to search items through AJAX.
+the git branch [front](//github.com/cxumol/mdx-server/tree/front) is a front-end wrappper, which offers a simple interface to search items through AJAX.
 
 **Warning**: To enable full feature of AJAX, it uses `Access-Control-Allow-Origin: *`.
 For security reason, pls change it by your self.  
