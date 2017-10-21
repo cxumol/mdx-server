@@ -82,11 +82,11 @@ def application(environ, start_response):
         start_response('200 OK', [('Content-Type', content_type)])
         return get_definitions_mdd(path_info, builders)
     else:
-        start_response('200 OK', [('Content-Type', 'text/html; charset=utf-8')])
+        start_response('200 OK', [('Content-Type', 'text/html; charset=utf-8'),("Access-Control-Allow-Origin","*")])
         return get_definitions_mdx(path_info[1:], builders)
 
 
-    start_response('200 OK', [('Content-Type', 'text/html; charset=utf-8')])
+    start_response('200 OK', [('Content-Type', 'text/html; charset=utf-8'),("Access-Control-Allow-Origin","*")])
     return [b'<h1>WSGIServer ok!</h1>']
 
 
