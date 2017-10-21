@@ -41,9 +41,9 @@ content_type_map = {
 try:
     # PyInstaller creates a temp folder and stores path in _MEIPASS
     #base_path = sys._MEIPASS
-    base_path = os.path.dirname(sys.executable)
-except Exception:
     base_path = os.path.abspath(".")
+except Exception:
+    base_path = os.path.dirname(sys.executable)
         
 resource_path = os.path.join(base_path, 'mdx')
 print("resouce path : " + resource_path)
@@ -104,17 +104,19 @@ if __name__ == '__main__':
     parser.add_argument("filenames", nargs='*', help="mdx file name")
     args = parser.parse_args()
 
+    try:
     # use GUI to select file, default to extract
-    if not args.filenames:
-        if sys.version_info < (3, 0, 0):
-            import Tkinter as tk
-            import tkFileDialog as filedialog
-        else:
-            import tkinter as tk
-            import tkinter.filedialog as filedialog
-        root = tk.Tk()
-        root.withdraw()
-        args.filenames = filedialog.askopenfilename(parent=root)
+        if not args.filenames:
+            if sys.version_info < (3, 0, 0):
+                import Tkinter as tk
+                import tkFileDialog as filedialog
+            else:
+                import tkinter as tk
+                import tkinter.filedialog as filedialog
+            root = tk.Tk()
+            root.withdraw()
+            args.filenames = filedialog.askopenfilename(parent=root)
+    except: pass
 
     if not all((os.path.exists(filename) for filename in args.filenames)):
         print("Please specify a valid MDX/MDD file")
