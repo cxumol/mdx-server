@@ -19,9 +19,9 @@ def mdx_content_to_output(content):
     try:
         # PyInstaller creates a temp folder and stores path in _MEIPASS
         # base_path = sys._MEIPASS
-        base_path = os.path.dirname(sys.executable)
-    except Exception:
         base_path = os.path.abspath(".")
+    except Exception:
+        base_path = os.path.dirname(sys.executable)
             
     resource_path = os.path.join(base_path, 'mdx')
 
