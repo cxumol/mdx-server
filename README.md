@@ -1,4 +1,18 @@
-##MDX Server
+This version aims to be more suitable for running on a remote \*inx server.
+
+Run `mdx_server.py /home/johndoe/mdx-server/mdx/MyDictionary1.mdx /home/johndoe/mdx-server/mdx/MyDictionary2.mdx` for example.
+
+the git branch `front` is a front-end wrappper, which offers a simple interface to search items through AJAX.
+
+**Warning**: To enable full feature of AJAX, it uses `Access-Control-Allow-Origin: *"`.
+For security reason, pls change it by your self.  
+You may also need to consider using HTTPS or even HSTS if you want to enchance security.
+
+original README forwarded as below:
+
+---
+
+## MDX Server
 
 MDX Server is a service used to read MDX/MDD dictionary data and provide a standard HTTP interface to external tools.
 
@@ -13,7 +27,7 @@ Please check with the [manual](manual/mdx-server%20manual.pdf) for more detail a
 
 
 
-##MDX Server使用说明
+## MDX Server使用说明
 
 目前流行的MDX词典文件只能在Mdict, GoldenDict, 欧路，深蓝等词典软件中使用，而不能将内容对外输出。MDX Server通过读取MDX、MDD格式的词典文件，对外部提供一个标准的HTTP服务接口。使得一些需要词典服务的软件，比如Kindlemate，Anki划词助手以及其他工具可以利用这个本地服务，灵活选取所需的MDX词典，批量或者单独获取单词的解释。
 
